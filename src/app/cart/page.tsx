@@ -12,7 +12,7 @@ import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 const Page = () => {
-  const { items, removeItem } = useCart()
+  const { items, removeItem, clearCart } = useCart()
 
   const router = useRouter()
 
@@ -62,10 +62,10 @@ const Page = () => {
                   aria-hidden='true'
                   className='relative mb-4 h-40 w-40 text-muted-foreground'>
                   <Image
-                    src='/hippo-empty-cart.png'
+                    src='/panda-empty-cart.jpg'
                     fill
                     loading='eager'
-                    alt='empty shopping cart hippo'
+                    alt='empty shopping cart panda'
                   />
                 </div>
                 <h3 className='font-semibold text-2xl'>
@@ -215,7 +215,11 @@ const Page = () => {
               <Button
                 disabled={items.length === 0 || isLoading}
                 onClick={() =>
-                  createCheckoutSession({ productIds })
+                  (createCheckoutSession({ productIds }),
+                  setTimeout(() => {
+                    clearCart()
+                  }, 1000)
+                  )
                 }
                 className='w-full'
                 size='lg'>

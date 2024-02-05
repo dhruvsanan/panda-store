@@ -6,26 +6,25 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import Cart from './Cart'
+import { Icons } from './Icons'
+import NavItems from './NavItems'
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
   const pathname = usePathname()
 
-  // whenever we click an item in the menu and navigate away, we want to close the menu
   useEffect(() => {
     setIsOpen(false)
   }, [pathname])
 
-  // when we click the path we are currently on, we still want the mobile menu to close,
-  // however we cant rely on the pathname for it because that won't change (we're already there)
   const closeOnCurrent = (href: string) => {
     if (pathname === href) {
       setIsOpen(false)
     }
   }
 
-  // remove second scrollbar when mobile menu is open
   useEffect(() => {
     if (isOpen)
       document.body.classList.add('overflow-hidden')
@@ -60,44 +59,13 @@ const MobileNav = () => {
               </button>
             </div>
 
+            <div className='flex px-4 pt-5'>
+              <Link href='/'>
+                  <Icons.logo className='h-10 w-10' />
+              </Link>
+            </div>
             <div className='mt-2'>
-              <ul>
-                {PRODUCT_CATEGORIES.map((category) => (
-                  <li
-                    key={category.label}
-                    className='space-y-10 px-4 pb-8 pt-10'>
-                    <div className='border-b border-gray-200'>
-                      <div className='-mb-px flex'>
-                        <p className='border-transparent text-gray-900 flex-1 whitespace-nowrap border-b-2 py-4 text-base font-medium'>
-                          {category.label}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className='grid grid-cols-2 gap-y-10 gap-x-4'>
-                      {category.featured.map((item) => (
-                        <div
-                          key={item.name}
-                          className='group relative text-sm'>
-                          <div className='relative aspect-square overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75'>
-                            <Image
-                              fill
-                              src={item.imageSrc}
-                              alt='product category image'
-                              className='object-cover object-center'
-                            />
-                          </div>
-                          <Link
-                            href={item.href}
-                            className='mt-6 block font-medium text-gray-900'>
-                            {item.name}
-                          </Link>
-                        </div>
-                      ))}
-                    </div>
-                  </li>
-                ))}
-              </ul>
+            <NavItems />
             </div>
 
             <div className='space-y-6 border-t border-gray-200 px-4 py-6'>
@@ -117,6 +85,7 @@ const MobileNav = () => {
                   Sign up
                 </Link>
               </div>
+              <Cart />
             </div>
           </div>
         </div>
