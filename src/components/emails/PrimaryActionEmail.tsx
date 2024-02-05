@@ -37,7 +37,7 @@ export const EmailTemplate = ({
             src="/panda-sign-up.jpg"
             width='150'
             height='150'
-            alt='DigitalHippo'
+            alt='Panda Store'
             style={logo}
           />
           <Text style={paragraph}>Hi there,</Text>

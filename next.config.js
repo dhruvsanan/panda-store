@@ -8,10 +8,10 @@ const nextConfig = {
 			},
 			{
 				protocol: "https",
-				hostname: "panda-store.up.railway.app/",
+				hostname: "panda-store.up.railway.app",
 			},
 		],
 	},
 };
 
-module.exports = nextConfig;
+module.exports = nextConfig
