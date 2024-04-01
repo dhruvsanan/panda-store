@@ -29,7 +29,7 @@ exports.default = (0, config_1.buildConfig)({
         meta: {
             titleSuffix: '- Panda Store',
             favicon: '/favicon.ico',
-            ogImage: '/thumbnail.jpg',
+            ogImage: '/thumbnail.webp',
         },
     },
     rateLimit: {

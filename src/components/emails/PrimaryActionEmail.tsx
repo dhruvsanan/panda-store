@@ -34,7 +34,7 @@ export const EmailTemplate = ({
       <Body style={main}>
         <Container style={container}>
           <Img
-            src="/panda-sign-up.jpg"
+            src="/panda-sign-up.webp"
             width='150'
             height='150'
             alt='Panda Store'

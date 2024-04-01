@@ -62,7 +62,7 @@ const Page = () => {
                   aria-hidden='true'
                   className='relative mb-4 h-40 w-40 text-muted-foreground'>
                   <Image
-                    src='/panda-empty-cart.jpg'
+                    src='/panda-empty-cart.webp'
                     fill
                     loading='eager'
                     alt='empty shopping cart panda'

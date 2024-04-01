@@ -47,7 +47,7 @@ export const ReceiptEmail = ({
           <Section>
             <Column>
               <Img
-                src="/panda-sent-email.jpg"
+                src="/panda-sent-email.webp"
                 width='100'
                 height='100'
                 alt='Panda Store'

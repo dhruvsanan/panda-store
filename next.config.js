@@ -8,7 +8,7 @@ const nextConfig = {
 			},
 			{
 				protocol: "https",
-				hostname: "panda-store.up.railway.app",
+				hostname: "ds-pandastore.vercel.app",
 			},
 		],
 	},

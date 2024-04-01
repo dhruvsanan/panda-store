@@ -29,7 +29,7 @@ export function formatPrice(
 export function constructMetadata({
   title = 'Panda Store - the marketplace for digital assets',
   description = 'Panda Store is an open-source marketplace for high-quality digital goods.',
-  image = '/thumbnail.png',
+  image = '/thumbnail.webp',
   icons = '/favicon.ico',
   noIndex = false,
 }: {
@@ -59,7 +59,7 @@ export function constructMetadata({
       creator: '@dhruvsanan',
     },
     icons,
-    metadataBase: new URL('https://panda-store.up.railway.app'),
+    metadataBase: new URL('https://ds-pandastore.vercel.app/'),
     ...(noIndex && {
       robots: {
         index: false,
